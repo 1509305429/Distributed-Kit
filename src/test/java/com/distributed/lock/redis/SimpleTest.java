@@ -19,11 +19,12 @@ public class SimpleTest {
         RedisReentrantLock lock=new RedisReentrantLock(jedisPool,"订单流水号");
         try {
             if (lock.tryLock(5000L, TimeUnit.MILLISECONDS)) {
-                //TODO 获得锁后要做的事
+                System.out.println("----------------获得锁-------------");
             }else{
-                //TODO 获得锁超时后要做的事
+                System.out.println("----------------超时-------------");
             }
         }finally {
+            System.out.println("释放锁");
             lock.unlock();
         }
     }
