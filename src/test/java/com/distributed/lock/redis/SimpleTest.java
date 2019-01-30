@@ -21,7 +21,7 @@ public class SimpleTest {
             if (lock.tryLock(5000L, TimeUnit.MILLISECONDS)) {
                 System.out.println("----------------获得锁-------------");
             }else{
-                System.out.println("----------------超时-------------");
+                System.out.println("----------------获锁超时-------------");
             }
         }finally {
             System.out.println("释放锁");
